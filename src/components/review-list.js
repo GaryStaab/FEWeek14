@@ -29,7 +29,11 @@ export default class ReviewList extends React.Component {
     }
 
     handleSubmit(event) {
-        alert(`A review was submitted by ${this.state.userValue}`);
+        //alert(`A review was submitted by ${this.state.userValue}`);
+        let newReview = {user: this.state.userValue, 
+                review: this.state.reviewValue, 
+                rating: this.state.ratingValue};
+        this.props.reviews.push(newReview);
         this.setState({userValue: '', reviewValue: '', ratingValue: undefined},() => {console.log(this.state)});
         event.preventDefault();
     }
@@ -40,7 +44,7 @@ export default class ReviewList extends React.Component {
                 <h4 className="result">Reviews</h4>
                 {this.props.reviews.map((review , i) => {
                     return (
-                        <div className="border border-primary">
+                        <div key={i} className="border border-primary">
                         <br></br>
                         <Review index={i} user={review.user} review={review.review} rating={review.rating}/>
                         </div>

@@ -11,8 +11,8 @@ export default class MovieList extends React.Component {
                 image: "https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/share_link_image_large/public/screenshots/csm-movie/bambi-ss1.jpg?itok=yHHWFaQf",
                 rating: 4,
                 reviews: [
-                    {user:"fred", review: "Not my cup of tea", rating: 0},
-                    {user:"ethel", review: "I loved it", rating: 4}
+                    // {user:"fred", review: "Not my cup of tea", rating: 0},
+                    // {user:"ethel", review: "I loved it", rating: 4}
                 ]
             }
             ,
@@ -35,7 +35,7 @@ export default class MovieList extends React.Component {
                 <h1 className="result"> Movie List</h1>
                 {this.moviesArray.map((movie , i) => {
                     return (
-                        <div className="border border-primary">
+                        <div key={i} className="border border-primary">
                         <br></br>
                         <Movie index={i} name={movie.name} synopsis={movie.synopsis} image={movie.image} rating={movie.rating} reviews={movie.reviews}/>
                         </div>
