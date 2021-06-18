@@ -15,7 +15,7 @@ export default class Movie extends React.Component {
                     <img src={this.props.image} alt="this.props.name" height="100px"/>
                 </div>
                 <div className="card-body">
-                    <h3>Synopsis</h3>
+                    <h3 className="result">Synopsis</h3>
                     {this.props.synopsis}
                     <br></br>
                     <h3 className="result">What the critics say</h3>
