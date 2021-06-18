@@ -6,8 +6,8 @@ export default class ReviewList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userValue: 'Please enter your review',
-            reviewValue: 'Please enter your review',
+            userValue: '',
+            reviewValue: '',
             ratingValue: undefined
         };
         this.handleChangeUser = this.handleChangeUser.bind(this);
@@ -29,9 +29,8 @@ export default class ReviewList extends React.Component {
     }
 
     handleSubmit(event) {
-        alert(`An essay was submitted by ${this.state.userValue}
-        Review: ${this.state.reviewValue}
-        Rating: ${this.state.ratingValue}`);
+        alert(`A review was submitted by ${this.state.userValue}`);
+        this.setState({userValue: '', reviewValue: '', ratingValue: undefined},() => {console.log(this.state)});
         event.preventDefault();
     }
 
@@ -54,7 +53,7 @@ export default class ReviewList extends React.Component {
                         <div className="row">
                         <label>
                             User:
-                            <input type="text"  value={this.state.userValue} name="user" className="form-control" onChange={this.handleChangeUser}/>
+                            <input type="text"  value={this.state.userValue} name="user" className="form-control" placeholder="Enter User name" onChange={this.handleChangeUser}/>
                         </label>
                         <label>
                           Review:
