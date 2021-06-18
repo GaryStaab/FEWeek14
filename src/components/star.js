@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Need to credit Yosra Skhiri - use her work as a template
+// https://dev.to/yosraskhiri/rating-stars-in-react-js-4dfg
+
 export default class Star extends React.Component {
     constructor(props) {
         super(props);

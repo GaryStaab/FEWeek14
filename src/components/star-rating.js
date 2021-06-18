@@ -1,6 +1,9 @@
 import React from 'react';
 import Star from './star';
 
+// Need to credit Yosra Skhiri - use her work as a template
+// https://dev.to/yosraskhiri/rating-stars-in-react-js-4dfg
+
 export default class StarRating extends React.Component {
     
 
